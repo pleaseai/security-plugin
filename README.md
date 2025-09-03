@@ -24,7 +24,7 @@ The Security extension adds the `/security analyze` command to Gemini CLI.
 
 ## GitHub Integration
 
-TODO
+Coming soon!
 
 ## Types of vulnerabilities
 
