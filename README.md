@@ -64,5 +64,4 @@ The Security extension scans files for the following vulnerabilities:
 ## Legal
 
 - License: [Apache License 2.0](https://github.com/google-gemini/gemini-cli-security/blob/main/LICENSE)
-- Terms of Service: [Terms & Privacy](https://github.com/google-gemini/gemini-cli-security/blob/main/docs/tos-privacy.md)
 - Security: [Security Policy](https://github.com/google-gemini/gemini-cli-security/blob/main/SECURITY.md)
