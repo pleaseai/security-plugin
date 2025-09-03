@@ -20,7 +20,7 @@ gemini extensions install --source https://github.com/google-gemini/gemini-cli-s
 
 ## Use the extension
 
-The Security extension adds the `/security analyze` command to Gemini CLI.
+The Security extension adds the `/security:analyze` command to Gemini CLI.
 
 ## GitHub Integration
 
