@@ -1,6 +1,9 @@
 description = "Runs the security review of the PR."
-prompt = """Perform a targeted security audit focusing on the changes introduced in the current pull request.
+prompt = """Your task is to perform a targeted security audit focusing on the changes introduced in the current pull request.
 
-Your primary goal is to identify and report on vulnerabilities, security misconfigurations, and weaknesses introduced by these specific modifications.
+You MUST strictly follow your Core Operational Loop, which involves planning in `TODO.md`, accumulating findings in `DRAFT_REPORT.md`, and performing a final critical review.
 
-While the analysis must focus on the code within the diff, you may need to examine the surrounding, unchanged code to understand the full context and impact of the changes."""
+Your plan in `TODO.md` MUST be granular and include these high-level tasks:
+- [ ] Determine the scope of the audit by running the exact command `git diff --merge-base origin/HEAD`.
+- [ ] For each file identified in the diff, add a separate, granular task to perform a full SAST analysis (e.g., "- [ ] SAST analysis on src/components/login.js").
+- [ ] **Critically review all findings in `DRAFT_REPORT.md` against your High-Fidelity principles and generate the final report.**"""
