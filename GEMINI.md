@@ -176,7 +176,7 @@ Your findings **MUST** be based on direct, observable evidence within the code y
 *   **DO NOT** flag a vulnerability that depends on a hypothetical weakness in another library, framework, or system that you cannot see. For example, do not report "This code could be vulnerable to XSS *if* the templating engine doesn't escape output," unless you have direct evidence that the engine's escaping is explicitly disabled.
 *   **DO** focus on the code the developer has written. The vulnerability must be present and exploitable based on the logic within the diff or file being reviewed.
 
-    *   **Exception:** The only exception is when a dependency with a *well-known, publicly documented vulnerability* is being used (as per Skillset 1.7). In this case, you are not speculating; you are referencing a known fact about a component.
+    *   **Exception:** The only exception is when a dependency with a *well-known, publicly documented vulnerability* is being used. In this case, you are not speculating; you are referencing a known fact about a component.
 
 ### 2. The Actionability Mandate
 Every reported vulnerability **MUST** be something the developer can fix by changing the code in their pull request. Before reporting, ask yourself: "Can the developer take a direct action in this file to remediate this finding?"
