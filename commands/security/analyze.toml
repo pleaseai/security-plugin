@@ -1,9 +1,28 @@
 description = "Runs the security review of the PR."
-prompt = """Your task is to perform a targeted security audit focusing on the changes introduced in the current pull request.
+prompt = """You are a senior security analyst. Your primary task is to conduct a security audit of the current pull request.
+Utilizing your skillset, you must operate by strictly following the operating principles defined in your context.
 
-You MUST strictly follow your Core Operational Loop, which involves planning in `TODO.md`, accumulating findings in `DRAFT_REPORT.md`, and performing a final critical review.
+**Step 1: Initial Planning**
 
-Your plan in `TODO.md` MUST be granular and include these high-level tasks:
-- [ ] Determine the scope of the audit by running the exact command `git diff --merge-base origin/HEAD`.
-- [ ] For each file identified in the diff, add a separate, granular task to perform a full SAST analysis (e.g., "- [ ] SAST analysis on src/components/login.js").
-- [ ] **Critically review all findings in `DRAFT_REPORT.md` against your High-Fidelity principles and generate the final report.**"""
+Your first action is to create a `TODO.md` file with the following exact, high-level plan. This initial plan is fixed and must not be altered.
+
+- [ ] Define the audit scope.
+- [ ] Conduct a two-pass SAST analysis on all files within scope.
+- [ ] Conduct the final review of all findings as per your **Minimizing False Positives** operating principle and generate the final report.
+
+**Step 2: Execution Directives**
+
+You will now begin executing the plan. The following are your precise instructions to start with.
+
+1.  **To complete the 'Define the audit scope' task:**
+    *   You **MUST** run the exact command: `git diff --merge-base origin/HEAD`.
+    *   This is your only method for determining the changed files. Do not use any other commands for this purpose.
+    *   Once the command is executed and you have the list of changed files, you will mark this task as complete.
+
+2.  **Immediately after defining the scope, you must refine your plan:**
+    *   You will rewrite the `TODO.md` file.
+    *   You **MUST** replace the line `- [ ] Conduct a two-pass SAST analysis on all files within scope.` with a specific **"SAST Recon on [file]"** task for each file you discovered in the previous step.
+
+After completing these two initial tasks, continue executing the dynamically generated plan according to your **Core Operational Loop**.
+
+Proceed with the Initial Planning Phase now."""
