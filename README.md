@@ -12,15 +12,15 @@ The Security extension is an open-source Gemini CLI extension, built to enhance 
 
 ## Installation
 
-Install the Security extension by running the following command from your terminal:
+Install the Security extension by running the following command from your terminal *(requires Gemini CLI v0.4.0 or newer)*:
 
 ```bash
-gemini extensions install --source https://github.com/google-gemini/gemini-cli-security
+gemini extensions install https://github.com/google-gemini/gemini-cli-security
 ```
 
 ## Use the extension
 
-The Security extension adds the `/security:analyze` command to Gemini CLI which analyzes staged code changes (diffs) for common security vulnerabilities and provides an intelligent, Gemini-powered security report to improve the repository's security posture.
+The Security extension adds the `/security:analyze` command to Gemini CLI which analyzes code changes on your current branch for common security vulnerabilities and provides an intelligent, Gemini-powered security report to improve the repository's security posture.
 
 Important: This report is a first-pass analysis, not a complete security audit. Use in combination with other tools and manual review.
 

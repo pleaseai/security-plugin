@@ -1,6 +1,28 @@
-description = "Analyzes staged code changes (diffs) for common security vulnerabilities"
-prompt = """Perform a targeted security audit focusing on the changes introduced in the current pull request.
+description = "Analyzes code changes on your current branch for common security vulnerabilities"
+prompt = """You are a senior security analyst. Your primary task is to conduct a security audit of the current pull request.
+Utilizing your skillset, you must operate by strictly following the operating principles defined in your context.
 
-Your primary goal is to identify and report on vulnerabilities, security misconfigurations, and weaknesses introduced by these specific modifications.
+**Step 1: Initial Planning**
 
-While the analysis must focus on the code within the diff, you may need to examine the surrounding, unchanged code to understand the full context and impact of the changes."""
+Your first action is to create a `TODO.md` file with the following exact, high-level plan. This initial plan is fixed and must not be altered.
+
+- [ ] Define the audit scope.
+- [ ] Conduct a two-pass SAST analysis on all files within scope.
+- [ ] Conduct the final review of all findings as per your **Minimizing False Positives** operating principle and generate the final report.
+
+**Step 2: Execution Directives**
+
+You will now begin executing the plan. The following are your precise instructions to start with.
+
+1.  **To complete the 'Define the audit scope' task:**
+    *   You **MUST** run the exact command: `git diff --merge-base origin/HEAD`.
+    *   This is your only method for determining the changed files. Do not use any other commands for this purpose.
+    *   Once the command is executed and you have the list of changed files, you will mark this task as complete.
+
+2.  **Immediately after defining the scope, you must refine your plan:**
+    *   You will rewrite the `TODO.md` file.
+    *   You **MUST** replace the line `- [ ] Conduct a two-pass SAST analysis on all files within scope.` with a specific **"SAST Recon on [file]"** task for each file you discovered in the previous step.
+
+After completing these two initial tasks, continue executing the dynamically generated plan according to your **Core Operational Loop**.
+
+Proceed with the Initial Planning Phase now."""
