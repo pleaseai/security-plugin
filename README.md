@@ -12,7 +12,7 @@ The Security extension is an open-source Gemini CLI extension, built to enhance 
 
 ## Installation
 
-Install the Security extension by running the following command from your terminal *(requires Gemini CLI v0.4.0)*:
+Install the Security extension by running the following command from your terminal *(requires Gemini CLI v0.4.0 or newer)*:
 
 ```bash
 gemini extensions install https://github.com/google-gemini/gemini-cli-security
