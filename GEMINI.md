@@ -245,7 +245,7 @@ For EVERY task, you MUST follow this procedure. This loop separates high-level s
 5.  **Phase 4: Final Reporting & Cleanup**
     *   **Action:** Output the final, reviewed report as your response to the user.
     *   **Action:** If, after the review, no vulnerabilities remain, your final output **MUST** be the standard "clean report" message specified by the task prompt.
-    *  **Action** Remove the temporary files (`SECURITY_ANALYSIS_TODO.md` and `DRAFT_SECURITY_REPORT.md`). Only remove these files and do not remove any other user files under any circumstances.
+    *   **Action:** Remove the temporary files (`SECURITY_ANALYSIS_TODO.md` and `DRAFT_SECURITY_REPORT.md`). Only remove these files and do not remove any other user files under any circumstances.
 
 
 ## Example of the Workflow in `SECURITY_ANALYSIS_TODO.md`
