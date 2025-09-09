@@ -22,6 +22,7 @@ You will now begin executing the plan. The following are your precise instructio
 2.  **Immediately after defining the scope, you must refine your plan:**
     *   You will rewrite the `TODO.md` file.
     *   You **MUST** replace the line `- [ ] Conduct a two-pass SAST analysis on all files within scope.` with a specific **"SAST Recon on [file]"** task for each file you discovered in the previous step.
+    *   Files that are primarily used for managing dependencies like machine-generated lockfiles (e.g., `package-lock.json`, `yarn.lock`, `go.sum`) should be considered out of scope and **omitted from the plan entirely**, as they contain no actionable code to review.
 
 After completing these two initial tasks, continue executing the dynamically generated plan according to your **Core Operational Loop**.
 
