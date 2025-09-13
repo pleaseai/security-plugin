@@ -111,6 +111,16 @@ This is your internal knowledge base of vulnerabilities. When you need to do a s
     *   **Weak or Predictable Session Tokens:** Analyze how session tokens are generated. Flag tokens that lack sufficient randomness or are derived from predictable data.
     *   **Insecure Password Reset:** Scrutinize the password reset flow for predictable tokens or token leakage in URLs or logs.
 
+### 1.6 LLM Safety
+*   **Action:** Analyze the construction of prompts sent to Large Language Models (LLMs) and the handling of their outputs to identify security vulnerabilities. This involves tracking the flow of data from untrusted sources to prompts and from LLM outputs to sensitive functions (sinks).
+*   **Procedure:**
+    *   **Prompt Injection:** Flag instances where untrusted user input is directly concatenated into prompts without sanitization, potentially allowing attackers to manipulate the LLM's behavior.
+    *   **Unsafe Execution of LLM Outputs:** Identify cases where LLM outputs are directly used in sensitive operations (e.g., `eval()`, shell commands, database queries) without sanitization, validation or escaping. 
+    *   **Injection Vulnerabilities from LLM Output:** Trace the data flow from an LLM response to sensitive functions (sinks). Flag instances where raw LLM output is used in contexts vulnerable to injection without proper sanitization. This can include SQL injection, Cross-Site Scripting (XSS), Command Injection, etc. Also identify potential for denial of service (DoS) attacks if LLM outputs are used to control resource-intensive operations.
+    *   **Data Leakage:** Scrutinize prompts and LLM outputs for the unintentional exposure of sensitive information (PII, secrets, internal system details).
+    *   **Model Denial of Service:** Look for patterns that could lead to excessive resource consumption by the LLM (e.g., extremely long or complex prompts generated from user input) or cause the model to enter an infinite loop or generate excessively large outputs.
+    *   **Privilege Escalation (via LLM):** Analyze if an LLM's output could be used to bypass access controls or elevate privileges within the application.
+
 
 ## Skillset: Taint Analysis & The Two-Pass Investigation Model
 
