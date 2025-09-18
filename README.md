@@ -15,7 +15,7 @@ The Security extension is an open-source Gemini CLI extension, built to enhance 
 Install the Security extension by running the following command from your terminal *(requires Gemini CLI v0.4.0 or newer)*:
 
 ```bash
-gemini extensions install https://github.com/google-gemini/gemini-cli-security
+gemini extensions install https://github.com/gemini-cli-extensions/security
 ```
 
 ## Use the extension
@@ -24,7 +24,7 @@ The Security extension adds the `/security:analyze` command to Gemini CLI which 
 
 Important: This report is a first-pass analysis, not a complete security audit. Use in combination with other tools and manual review.
 
-Note: The /security:analyze command is currently designed for interactive use. Support for non-interactive sessions is planned for a future release (tracked in [issue #20](https://github.com/google-gemini/gemini-cli-security/issues/20)).
+Note: The /security:analyze command is currently designed for interactive use. Support for non-interactive sessions is planned for a future release (tracked in [issue #20](https://github.com/gemini-cli-extensions/security/issues/20)).
 
 ## GitHub Integration
 
@@ -85,9 +85,9 @@ The Security extension scans files for the following vulnerabilities:
 
 - [Gemini CLI extensions](https://github.com/google-gemini/gemini-cli/blob/main/docs/extension.md): Documentation about using extensions in Gemini CLI
 - Blog post (coming soon!): More information about the Security extension
-- [GitHub issues](https://github.com/google-gemini/gemini-cli-security/issues): Report bugs or request features
+- [GitHub issues](https://github.com/gemini-cli-extensions/security/issues): Report bugs or request features
 
 ## Legal
 
-- License: [Apache License 2.0](https://github.com/google-gemini/gemini-cli-security/blob/main/LICENSE)
-- Security: [Security Policy](https://github.com/google-gemini/gemini-cli-security/blob/main/SECURITY.md)
+- License: [Apache License 2.0](https://github.com/gemini-cli-extensions/security/blob/main/LICENSE)
+- Security: [Security Policy](https://github.com/gemini-cli-extensions/security/blob/main/SECURITY.md)
