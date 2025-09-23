@@ -35,7 +35,7 @@ By default, the `/security:analyze` command determines the scope of the analysis
 /security:analyze Analyze all the source code under the script folder. Skip the docs, config files and package files.
 ```
 
-![Security Extension Workflow](./assets/customize_command.gif)
+![Customize analysis command](./assets/customize_command.gif)
 
 ## GitHub Integration
 
