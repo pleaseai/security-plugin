@@ -2,6 +2,8 @@
 
 The Security extension is an open-source Gemini CLI extension, built to enhance your repository's security posture. The extension adds a new command to Gemini CLI that analyzes code changes to identify a variety of security risks and vulnerabilities.
 
+![Security Extension Workflow](./assets/gemini-cli-security-extension-workflow.gif)
+
 ## Features
 
 - **AI-powered security analysis**: Leverages Gemini's advanced capabilities to provide intelligent and context-aware security analysis.
@@ -25,6 +27,15 @@ The Security extension adds the `/security:analyze` command to Gemini CLI which 
 Important: This report is a first-pass analysis, not a complete security audit. Use in combination with other tools and manual review.
 
 Note: The /security:analyze command is currently designed for interactive use. Support for non-interactive sessions is planned for a future release (tracked in [issue #20](https://github.com/gemini-cli-extensions/security/issues/20)).
+
+### Customize the `/security:analyze` command
+
+By default, the `/security:analyze` command determines the scope of the analysis using `git diff --merge-base origin/HEAD`. However, to customize the scope, you can add instructions to the command using natural language. For example, to analyze all files in `scripts` folder, you can run the command as
+```bash
+/security:analyze Analyze all the source code under the script folder. Skip the docs, config files and package files.
+```
+
+![Customize analysis command](./assets/customize_command.gif)
 
 ## GitHub Integration
 
