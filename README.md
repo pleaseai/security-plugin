@@ -81,14 +81,10 @@ The Security extension scans files for the following vulnerabilities:
 - **Weak or predictable session tokens**: Tokens that are predictable, lack sufficient entropy, or are generated from user-controllable data
 - **Insecure password reset**: Predictable reset tokens, leakage of tokens in logs or URLs, and insecure confirmation of a user's identity
 
-### LLM Safety
-- **Insecure Handling of LLM Inputs (Prompts)**: Analyzes how prompts are constructed, identifying risks from concatenating untrusted data sources or embedding sensitive information (e.g., API keys, PII) directly in prompts.
-- **Unsafe Execution of LLM-generated content**: Detects when code or commands returned by the LLM are executed directly (e.g., via `eval()`, shell execution, or scripting libraries) without proper sandboxing or validation.
-- **Injection Vulnerabilities from LLM Output**: Identifies cases where LLM output is concatenated into backend-sensitive functions, such as SQL queries, OS commands, or web page rendering (XSS).
-- **Unsanitized Rendering of LLM Outputs**: Finds vulnerabilities where LLM-generated content (like HTML or Markdown) is rendered on a client without adequate sanitization, potentially leading to Cross-Site Scripting (XSS).
-- **Insecure Plugin/Tool Usage**: Detects when LLM output is used to select or provide input to external plugins or tools, which could result in code injection or privilege escalation.
-- **Insecure Logging or Storage of Sensitive LLM Outputs**: Finds instances where sensitive data from LLM interactions (which may include PII, credentials, or proprietary information) is logged or stored insecurely.
-- **Improper Trust in LLM Outputs for Security Decisions**: Detects cases where critical security logic (such as authorization, access control, or validation) is based directly on manipulable LLM output.
+## LLM Safety
+- **Insecure Prompt Handling (Prompt Injection)**: Analyzes how prompts are constructed to identify risks from untrusted user data, which could lead to prompt injection attacks. This can also include embedding sensitive information (API Keys, credentials, PII) directly within the code used to generate the prompt or the prompt itself.
+- **Improper Output Handling**: Detects when LLM-generated content is used unsafely, leading to vulnerabilities like Cross-Site Scripting (XSS), SQL Injection (SQLi), or the remote execution of code via functions like `eval()`.
+- **Insecure Plugin and Tool Usage**: Scans for vulnerabilities in how the LLM interacts with external tools, flagging overly permissive tools or unsafe data flows that could be exploited by malicious output.
 
 ## Resources
 
