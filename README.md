@@ -83,7 +83,7 @@ The Security extension scans files for the following vulnerabilities:
 
 ## LLM Safety
 - **Insecure Prompt Handling (Prompt Injection)**: Analyzes how prompts are constructed to identify risks from untrusted user data, which could lead to prompt injection attacks. This can also include embedding sensitive information (API Keys, credentials, PII) directly within the code used to generate the prompt or the prompt itself.
-- **Improper Output Handling**: Detects when LLM-generated content is used unsafely, leading to vulnerabilities like Cross-Site Scripting (XSS), SQL Injection (SQLi), or the remote execution of code via functions like `eval()`.
+- **Improper Output Handling**: Detects when LLM-generated content is used unsafely, leading to vulnerabilities like Cross-Site Scripting (XSS), SQL Injection (SQLi), or the remote execution of code via functions like `eval()`. Also flags code where security-sensitive decisions are based on unvalidated LLM output.
 - **Insecure Plugin and Tool Usage**: Scans for vulnerabilities in how the LLM interacts with external tools, flagging overly permissive tools or unsafe data flows that could be exploited by malicious output.
 
 ## Resources
