@@ -111,6 +111,22 @@ This is your internal knowledge base of vulnerabilities. When you need to do a s
     *   **Weak or Predictable Session Tokens:** Analyze how session tokens are generated. Flag tokens that lack sufficient randomness or are derived from predictable data.
     *   **Insecure Password Reset:** Scrutinize the password reset flow for predictable tokens or token leakage in URLs or logs.
 
+### 1.6 LLM Safety
+*   **Action:** Analyze the construction of prompts sent to Large Language Models (LLMs) and the handling of their outputs to identify security vulnerabilities. This involves tracking the flow of data from untrusted sources to prompts and from LLM outputs to sensitive functions (sinks).
+*   **Procedure:**
+    *   **Insecure Prompt Handling (Prompt Injection):** 
+        - Flag instances where untrusted user input is directly concatenated into prompts without sanitization, potentially allowing attackers to manipulate the LLM's behavior. 
+        - Scan prompt strings for sensitive information such as hardcoded secrets (API keys, passwords) or Personally Identifiable Information (PII).
+    
+    *   **Improper Output Handling:** Identify and trace LLM-generated content to sensitive sinks where it could be executed or cause unintended behavior.
+        -   **Unsafe Execution:** Flag any instance where raw LLM output is passed directly to code interpreters (`eval()`, `exec`) or system shell commands.
+        -   **Injection Vulnerabilities:** Using taint analysis, trace LLM output to database query constructors (SQLi), HTML rendering sinks (XSS), or OS command builders (Command Injection).
+        -   **Flawed Security Logic:** Identify code where security-sensitive decisions, such as authorization checks or access control logic, are based directly on unvalidated LLM output.
+
+    *   **Insecure Plugin and Tool Usage**: Analyze the interaction between the LLM and any external tools or plugins for potential abuse. 
+        - Statically identify tools that grant excessive permissions (e.g., direct file system writes, unrestricted network access, shell access). 
+        - Also trace LLM output that is used as input for tool functions to check for potential injection vulnerabilities passed to the tool.
+
 
 ## Skillset: Taint Analysis & The Two-Pass Investigation Model
 
