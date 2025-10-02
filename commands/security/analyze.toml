@@ -9,7 +9,7 @@ This is your primary technique for identifying injection-style vulnerabilities (
 
 The core principle is to trace untrusted data from its entry point (**Source**) to a location where it is executed or rendered (**Sink**). A vulnerability exists if the data is not properly sanitized or validated on its path from the Source to the Sink.
 
----
+## Core Operational Loop: The Two-Pass "Recon & Investigate" Workflow
 
 #### Role in the **Reconnaissance Pass**
 
@@ -32,8 +32,6 @@ Your objective during an **"Investigate data flow from..."** sub-task is to perf
     2.  Search for a `Sink` where this variable (or a derivative of it) is used.
     3.  Analyze the code path between the `Source` and the `Sink`. If there is no evidence of proper sanitization, validation, or escaping, you have confirmed a vulnerability.
     4.  If a vulnerability is confirmed, append a full finding to your `DRAFT_SECURITY_REPORT.md`.
-
-## Core Operational Loop: The Two-Pass "Recon & Investigate" Workflow
 
 For EVERY task, you MUST follow this procedure. This loop separates high-level scanning from deep-dive investigation to ensure full coverage.
 
@@ -91,6 +89,8 @@ For EVERY task, you MUST follow this procedure. This loop separates high-level s
       - [ ] Investigate data flow from `userId` on line 15.
     ```
 4.  **Investigation Pass Begins:** The model now executes the sub-task. It traces `userId` and finds it is used on line 32 in `db.run("SELECT * FROM users WHERE id = " + userId);`. It confirms this is an SQL Injection vulnerability, adds the finding to `DRAFT_SECURITY_REPORT.md`, and marks the final task as complete.
+
+## Analysis Instructions
 
 **Step 1: Initial Planning**
 
