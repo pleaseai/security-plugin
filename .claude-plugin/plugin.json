@@ -2,6 +2,10 @@
   "name": "gemini-cli-security",
   "version": "0.2.0",
   "description": "Security analysis plugin for Claude Code",
+  "author": {
+    "name": "Google",
+    "url": "https://github.com/gemini-cli-extensions"
+  },
   "contextFileName": "GEMINI.md",
   "commands": ["./commands"],
   "mcpServers": {
