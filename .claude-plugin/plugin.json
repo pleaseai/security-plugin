@@ -6,7 +6,6 @@
     "name": "Google",
     "url": "https://github.com/gemini-cli-extensions"
   },
-  "contextFileName": "GEMINI.md",
   "commands": ["./commands"],
   "mcpServers": {
     "securityServer": {
@@ -15,19 +14,5 @@
         "${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/security.js"
       ]
     }
-  },
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "startup",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/context.sh",
-            "timeout": 10
-          }
-        ]
-      }
-    ]
   }
 }
